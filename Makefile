@@ -20,7 +20,7 @@ EXE=test
 OBJS=test.o start.o syscall.o
 
 all: $(EXE)
-	./$(EXE); echo $$?
+	./$(EXE)
 
 $(EXE): $(OBJS)
 	$(LD) $(LDFLAGS) -o $@ $^
