@@ -1,3 +1,4 @@
+#include <cet.h>
 #include <syscall.h>
 
 	.text
