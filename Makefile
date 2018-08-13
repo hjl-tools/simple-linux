@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-g -O0
-ASFLAGS=-g
+ASFLAGS=-g -fcf-protection
 LD=ld
 LDFLAGS=
 
