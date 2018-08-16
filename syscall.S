@@ -1,5 +1,3 @@
-#include <cet.h>
-
 	.text
 	.type syscall,  @function
 	.globl syscall

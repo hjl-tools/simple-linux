@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-g -O0
-ASFLAGS=-g -fcf-protection
+ASFLAGS=-g -fcf-protection -Wa,-mx86-used-note=no
 LD=ld
 LDFLAGS=
 

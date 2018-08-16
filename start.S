@@ -1,4 +1,3 @@
-#include <cet.h>
 #include "macros.h"
 
 	.text
