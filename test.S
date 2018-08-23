@@ -49,19 +49,20 @@ foo:
 4:
 	.zero 0x4000
 5:
-#ifdef __LP64__
+#ifdef MULTIPLE_NOTE
+# ifdef __LP64__
 	.p2align 3
-#else
+# else
 	.p2align 2
-#endif
+# endif
 3:
 
 	.section ".note.gnu.property", "a"
-#ifdef __LP64__
+# ifdef __LP64__
 	.p2align 3
-#else
+# else
 	.p2align 2
-#endif
+# endif
 	.long 1f - 0f		/* name length.  */
 	.long 3f - 1f		/* data length.  */
 	/* NT_GNU_PROPERTY_TYPE_0 */
@@ -69,6 +70,7 @@ foo:
 0:
 	.asciz "GNU"		/* vendor name.  */
 1:
+#endif
 #ifdef __LP64__
 	.p2align 3
 #else

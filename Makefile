@@ -4,15 +4,19 @@ ASFLAGS=-g -fcf-protection -Wa,-mx86-used-note=no
 LD=ld
 LDFLAGS=
 
-EXE=test
+EXES=test1 test2
 
-OBJS=test.o start.o syscall.o
+OBJS=start.o syscall.o
 
-all: $(EXE)
-	./$(EXE) hello world
+all: $(EXES)
+	./test1 hello world
+	./test2 hello world
 
-$(EXE): $(OBJS)
+test1: $(OBJS) test1.o
+	$(LD) $(LDFLAGS) -o $@ $^
+
+test2: $(OBJS) test2.o
 	$(LD) $(LDFLAGS) -o $@ $^
 
 clean:
-	rm -f $(OBJS) $(EXE)-* $(EXE)
+	rm -f $(OBJS) $(EXES)
